@@ -33,13 +33,13 @@ def predict():
 
             prediction=model.predict([[source_port,destination_port,nat_source_port,nat_destination_port,bytes1,bytes_sent,bytes_received,packets,elapsed_time_sec,pkts_sent,pkts_received]])
             output=int(prediction)
-            if prediction == 0:
+            if output == 0:
 		    return render_template('results.html',prediction_text="allow")
-            if prediction == 1:
+            if output == 1:
 		    return render_template('results.html',prediction_text="deny")
-	    if prediction == 2:
+	    if output == 2:
 		    return render_template('results.html',prediction_text="drop")
-	    if prediction == 3:
+	    if output == 3:
 		    return render_template('results.html',prediction_text="reset-both")
     else:
         return render_template('results.html')
