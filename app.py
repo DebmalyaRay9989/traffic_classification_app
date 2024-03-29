@@ -19,7 +19,6 @@ standard_to = StandardScaler()
 
 
 @app.route("/predict", methods=['POST'])
-
 def predict():
     output=0
     prediction=0
@@ -36,16 +35,16 @@ def predict():
         pkts_sent = int(request.int['pkts_sent'])
         pkts_received = int(request.form['pkts_received'])
 
-        prediction=model.predict([[source_port,destination_port,nat_source_port,nat_destination_port,bytes1,bytes_sent,bytes_received,packets,elapsed_time_sec,pkts_sent,pkts_received]])
+        prediction=model.predict([[source_port, destination_port, nat_source_port, nat_destination_port, bytes1, bytes_sent, bytes_received,
+                                packets, elapsed_time_sec, pkts_sent, pkts_received]])
         output=int(prediction)
-
         if output == 0:
             return render_template('results.html',prediction_text="allow")
-        if output == 1:
+        elif output == 1:
 	        return render_template('results.html',prediction_text="deny")
-        if output == 2:
+        elif output == 2:
 	        return render_template('results.html',prediction_text="drop")
-        if output == 3:
+        elif output == 3:
 	        return render_template('results.html',prediction_text="reset-both")
     else:
         return render_template('results.html')
