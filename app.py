@@ -7,7 +7,7 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-model = pickle.load(open('random2.pkl', 'rb'))
+model = pickle.load(open('random3.pkl', 'rb'))
 
 
 @app.route('/',methods=['GET'])
