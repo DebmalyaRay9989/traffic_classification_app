@@ -9,7 +9,7 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
-model = pickle.load(open('internet_firewall_data_pipelines.pkl', 'rb'))
+model = pickle.load(open('final_randomforest_latest.pkl', 'rb'))
 @app.route('/',methods=['GET'])
 def Home():
     return render_template('index.html')
