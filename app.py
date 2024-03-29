@@ -19,17 +19,17 @@ def predict():
     output=0
     prediction=0
     if request.method == 'POST':
-	    source_port = int(request.form['source_port'])
-            destination_port = int(request.form['destination_port'])
-            nat_source_port = int(request.form['nat_source_port'])
-            nat_destination_port = int(request.form['nat_destination_port'])
-            bytes1 = int(request.form['bytes1'])
-	    bytes_sent = int(request.form['bytes_sent'])	
-	    bytes_received = int(request.form['bytes_received'])
-	    packets = int(request.form['packets'])
-	    elapsed_time_sec = int(request.form['elapsed_time_sec'])
-	    pkts_sent = int(request.form['pkts_sent'])
-            pkts_received = int(request.form['pkts_received'])
+	    source_port = float(request.form['source_port'])
+            destination_port = float(request.form['destination_port'])
+            nat_source_port = float(request.form['nat_source_port'])
+            nat_destination_port = float(request.form['nat_destination_port'])
+            bytes1 = float(request.form['bytes1'])
+	    bytes_sent = float(request.form['bytes_sent'])	
+	    bytes_received = float(request.form['bytes_received'])
+	    packets = float(request.form['packets'])
+	    elapsed_time_sec = float(request.form['elapsed_time_sec'])
+	    pkts_sent = float(request.form['pkts_sent'])
+            pkts_received = float(request.form['pkts_received'])
 
             prediction=model.predict([[source_port,destination_port,nat_source_port,nat_destination_port,bytes1,bytes_sent,bytes_received,packets,elapsed_time_sec,pkts_sent,pkts_received]])
             output=int(prediction)
