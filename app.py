@@ -23,7 +23,7 @@ def predict():
             destination_port = int(request.form['destination_port'])
             nat_source_port = int(request.form['nat_source_port'])
             nat_destination_port = int(request.form['nat_destination_port'])
-            bytes1 = int(request.form['bytes'])
+            bytes1 = int(request.form['bytes1'])
 	    bytes_sent = int(request.form['bytes_sent'])	
 	    bytes_received = int(request.form['bytes_received'])
 	    packets = int(request.form['packets'])
