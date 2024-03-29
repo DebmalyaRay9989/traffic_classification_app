@@ -12,7 +12,7 @@ numpy>=1.11.0
 pandas
 pickleshare==0.7.5
 requests==2.24.0
-scikit-learn==0.22
+scikit-learn
 scipy
 threadpoolctl==2.1.0
 urllib3==1.25.9
