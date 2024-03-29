@@ -21,28 +21,28 @@ def predict():
     output=0
     prediction=0
     if request.method == 'POST':
-        source_port = int(request.form['source_port'])
-        destination_port = int(request.form['destination_port'])
-        nat_source_port = int(request.form['nat_source_port'])
-        nat_destination_port = int(nat_destination_port)
-        bytes1 = int(request.form['bytes'])
-		bytes_sent = int(request.form['bytes_sent'])
-		bytes_received = int(request.form['bytes_received'])
-		packets = int(request.form['packets'])
-		elapsed_time_sec = int(request.form['elapsed_time_sec'])
-		pkts_sent = int(request.form['pkts_sent'])
-        pkts_received = int(request.form['pkts_received'])
+	    source_port = request.form['source_port']
+            destination_port = request.form['destination_port']
+            nat_source_port = request.form['nat_source_port']
+            nat_destination_port = nat_destination_port
+            bytes1 = request.form['bytes']
+	    bytes_sent = request.form['bytes_sent']	
+	    bytes_received = request.form['bytes_received']
+	    packets = request.form['packets']
+	    elapsed_time_sec = request.form['elapsed_time_sec']
+	    pkts_sent = request.form['pkts_sent']
+            pkts_received = request.form['pkts_received']
 
-        prediction=model.predict([[source_port,destination_port,nat_source_port,nat_destination_port,bytes1,bytes_sent,bytes_received,packets,elapsed_time_sec,pkts_sent,pkts_received]])
-        output=int(prediction)
-        if prediction==0:
-            return render_template('results.html',prediction_text="allow")
-        if prediction==1:
-            return render_template('results.html',prediction_text="deny")
-		if prediction==2:
-			return render_template('results.html',prediction_text="drop")
-		if prediction==3:
-			return render_template('results.html',prediction_text="reset-both")
+            prediction=model.predict([[source_port,destination_port,nat_source_port,nat_destination_port,bytes1,bytes_sent,bytes_received,packets,elapsed_time_sec,pkts_sent,pkts_received]])
+            output=int(prediction)
+            if prediction==0:
+		    return render_template('results.html',prediction_text="allow")
+            if prediction==1:
+		    return render_template('results.html',prediction_text="deny")
+	    if prediction==2:
+		    return render_template('results.html',prediction_text="drop")
+	    if prediction==3:
+		    return render_template('results.html',prediction_text="reset-both")
     else:
         return render_template('results.html')
 
