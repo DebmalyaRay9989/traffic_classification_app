@@ -32,7 +32,7 @@ def predict():
         bytes_received = int(request.form['bytes_received'])
         packets = int(request.form['packets'])
         elapsed_time_sec = int(request.form['elapsed_time_sec'])
-        pkts_sent = int(request.int['pkts_sent'])
+        pkts_sent = int(request.form['pkts_sent'])
         pkts_received = int(request.form['pkts_received'])
 
         prediction=model.predict([[source_port, destination_port, nat_source_port, nat_destination_port, bytes1, bytes_sent, bytes_received,
