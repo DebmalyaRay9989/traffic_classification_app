@@ -1,24 +1,106 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predictive Analysis</title>
-</head>
-
-<body>
-		<style>
-		body {
-				background-image: url("https://images.pexels.com/photos/2525871/pexels-photo-2525871.jpeg");
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-size: 100% 100%;
-			 }
-		</style>
-    <div style="color:white">
-        <form action="{{ url_for('predict')}}" method="post">
-		    <h1><b><u> Internet Firewall Data - Classification </u></b></h1>
+<html>
+  <head>
+    <title>form_data</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      }
+      h1 {
+      margin: 0 0 20px;
+      font-weight: 400;
+      color: #1c87c9;
+      }
+      p {
+      margin: 0 0 5px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #1c87c9;
+      }
+      form {
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 0 2px 5px #f5f5f5; 
+      background: #f5f5f5; 
+      }
+      .fas {
+      margin: 25px 10px 0;
+      font-size: 72px;
+      color: #fff;
+      }
+      .fa-envelope {
+      transform: rotate(-20deg);
+      }
+      .fa-at , .fa-mail-bulk{
+      transform: rotate(10deg);
+      }
+      input, textarea {
+      width: calc(100% - 18px);
+      padding: 5px;
+      margin-bottom: 2px;
+      border: 1px solid #1c87c9;
+      outline: none;
+      }
+      input::placeholder {
+      color: #666;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #1c87c9; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+      background: #2371a0;
+      }    
+      @media (min-width: 768px) {
+      .main-block {
+      flex-direction: row;
+      }
+      .middle-part, form {
+      width: 50%;
+      }
+      .fa-envelope {
+      margin-top: 0;
+      margin-left: 30%;
+      }
+      .fa-at {
+      margin-top: -10%;
+      margin-left: 65%;
+      }
+      .fa-mail-bulk {
+      margin-top: 2%;
+      margin-left: 28%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+      </div>
+      <form action="{{ url_for('predict')}}" method="post">
+        <h1><b><u> Internet Firewall Data - Classification </u></b></h1>
+        <div class="info">
             <h3>Source Port</h3><input id="first" name="source_port" required="required">
             <h3>Destination Port</h3><input id="second" name="destination_port" required="required">
             <h3>Nat Source Port</h3><input id="third" name="nat_source_port" required="required">
@@ -30,183 +112,10 @@
 			<h3>Elapsed Time Seconds</h3><input id="nineth" name="elapsed_time_sec" required="required">
 			<h3>Packets Sent</h3><input id="tenth" name="pkts_sent" required="required">
 			<h3>Packets Received</h3><input id="eleventh" name="pkts_received" required="required">
-            <br><br><button id="sub" type="submit ">Allow Or Reject</button>
             <br>
-
-
-        </form>
-
-        <br><br><h3>{{ prediction_text }}<h3>
+        </div>
+        <br><br><button id="sub" type="submit ">Allow Or Reject</button>
+      </form>
     </div>
-
-
-
-
-    <style>
-        body {
-            background-color: lightslategray;
-            text-align: center;
-            padding: 0px;
-        }
-        
-        #research {
-            font-size: 18px;
-            width: 100px;
-            height: 23px;
-            top: 23px;
-        }
-        
-        #box {
-            border-radius: 60px;
-            border-color: 45px;
-            border-style: solid;
-            font-family: cursive;
-            text-align: center;
-            background-color: rgb(168, 131, 61);
-            font-size: medium;
-            position: absolute;
-            width: 700px;
-            bottom: 9%;
-            height: 850px;
-            right: 30%;
-            padding: 0px;
-            margin: 0px;
-            font-size: 14px;
-        }
-        
-        #fuel {
-            width: 83px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 20px;
-        }
-        
-        #fuel:hover {
-            background-color: coral;
-        }
-        
-        #research {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #research:hover {
-            background-color: coral;
-        }
-        
-        #resea {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #resea:hover {
-            background-color: coral;
-        }
-        
-        #sub {
-            width: 150px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #sub:hover {
-            background-color: darkcyan;
-        }
-        
-        #first {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #second {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #third {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #fourth {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#fourth {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#fifth {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#sixth {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#seventh {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#eighth {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#nineth {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#tenth {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-		#eleventh {
-            border-radius: 12px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-		
-    </style>
-</body>
-
+  </body>
 </html>
