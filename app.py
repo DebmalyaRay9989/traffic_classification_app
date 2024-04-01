@@ -12,7 +12,7 @@ model = pickle.load(open('random4.pkl', 'rb'))
 
 @app.route('/',methods=['GET'])
 def Home():
-    return render_template('index.html')
+    return render_template('login.html')
 
 # add database like login credentials, username and password
 
