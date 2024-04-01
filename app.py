@@ -9,6 +9,10 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 model = pickle.load(open('random4.pkl', 'rb'))
 
+@app.after_request
+def add_header(response):
+    response.cache_control.no_store = True
+    return response
 
 @app.route('/',methods=['GET'])
 def Home():
