@@ -10,8 +10,8 @@ app = Flask(__name__)
 model = pickle.load(open('random4.pkl', 'rb'))
 
 @app.after_request
-def add_header(response):
-    response.cache_control.no_store = True
+def after_request(response):
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     return response
 
 @app.route('/',methods=['GET'])
