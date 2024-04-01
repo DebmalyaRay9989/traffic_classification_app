@@ -20,12 +20,12 @@ def Home():
 			
 standard_to = StandardScaler()
 
-@app.route('/form_login', methods=['POST', 'GET'])
-
 database = {'admin': 'admin',
             'xyz': 'xyz', 
             'superuser': 'superuser', 'Tony': 'pqr'}
 
+
+@app.route('/form_login', methods=['POST', 'GET'])
 
 def login():
     name1 = request.form['username']
