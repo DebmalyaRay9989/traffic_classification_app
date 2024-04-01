@@ -16,12 +16,16 @@ def Home():
 
 # add database like login credentials, username and password
 
+
+			
+standard_to = StandardScaler()
+
+@app.route('/form_login', methods=['POST', 'GET'])
+
 database = {'admin': 'admin',
             'xyz': 'xyz', 
             'superuser': 'superuser', 'Tony': 'pqr'}
-			
-			
-standard_to = StandardScaler()
+
 
 def login():
     name1 = request.form['username']
@@ -34,8 +38,7 @@ def login():
             return render_template('login.html', 
                                    info='Invalid Password ????!')
         else:
-            return render_template('index.html',
-                                   name=name1)
+            return render_template('index.html')
  
 
 @app.route("/predict", methods=['POST'])
