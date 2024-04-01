@@ -23,7 +23,6 @@ database = {'admin': 'admin',
 			
 standard_to = StandardScaler()
 
-@app.route('/form_login', methods=['POST', 'GET'])
 def login():
     name1 = request.form['username']
     pwd = request.form['password']
