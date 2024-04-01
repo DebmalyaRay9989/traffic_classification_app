@@ -39,13 +39,13 @@ def predict():
                                 packets, elapsed_time_sec, pkts_sent, pkts_received]])
         output=int(prediction)
         if output == 0:
-            return render_template('results.html',prediction_text="allow")
+            return render_template('results.html',prediction_text="The class is defined as : ALLOW")
         elif output == 1:
-	        return render_template('results.html',prediction_text="deny")
+	        return render_template('results.html',prediction_text="The class is defined as : DENY")
         elif output == 2:
-	        return render_template('results.html',prediction_text="drop")
+	        return render_template('results.html',prediction_text="The class is defined as : DROP")
         elif output == 3:
-	        return render_template('results.html',prediction_text="reset-both")
+	        return render_template('results.html',prediction_text="The class is defined as : RESET-BOTH")
     else:
         return render_template('results.html')
 
