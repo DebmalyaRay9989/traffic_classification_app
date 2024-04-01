@@ -20,11 +20,6 @@ def Home():
 			
 standard_to = StandardScaler()
 
-@app.route('/logout')
-def logout():
-    session.pop('username')
-    return render_template('login.html')
-
 database = {'admin': 'admin',
             'xyz': 'xyz', 
             'superuser': 'superuser', 'Tony': 'pqr'}
