@@ -101,17 +101,17 @@
       <form action="{{ url_for('predict')}}" method="post">
         <h1><b><u> Internet Firewall Data - Classification </u></b></h1>
         <div class="info">
-            <h3>Source Port</h3><input id="first" name="source_port" required="required">
-            <h3>Destination Port</h3><input id="second" name="destination_port" required="required">
-            <h3>Nat Source Port</h3><input id="third" name="nat_source_port" required="required">
-            <h3>Nat Destination Port</h3><input id="fourth" name="nat_destination_port" required="required">
-			<h3>Bytes</h3><input id="fifth" name="bytes1" required="required">
-			<h3>Bytes Sent</h3><input id="sixth" name="bytes_sent" required="required">
-			<h3>Bytes Received</h3><input id="seventh" name="bytes_received" required="required">
-			<h3>Packets</h3><input id="eighth" name="packets" required="required">
-			<h3>Elapsed Time Seconds</h3><input id="nineth" name="elapsed_time_sec" required="required">
-			<h3>Packets Sent</h3><input id="tenth" name="pkts_sent" required="required">
-			<h3>Packets Received</h3><input id="eleventh" name="pkts_received" required="required">
+            <h3>Source Port (Eg: 50627)</h3><input id="first" name="source_port" required="required">
+            <h3>Destination Port (Eg: 443)</h3><input id="second" name="destination_port" required="required">
+            <h3>Nat Source Port (Eg: 16215)</h3><input id="third" name="nat_source_port" required="required">
+            <h3>Nat Destination Port (Eg: 443)</h3><input id="fourth" name="nat_destination_port" required="required">
+			<h3>Bytes (Eg: 8256)</h3><input id="fifth" name="bytes1" required="required">
+			<h3>Bytes Sent (Eg: 1674)</h3><input id="sixth" name="bytes_sent" required="required">
+			<h3>Bytes Received (Eg: 6582)</h3><input id="seventh" name="bytes_received" required="required">
+			<h3>Packets (Eg: 31)</h3><input id="eighth" name="packets" required="required">
+			<h3>Elapsed Time Seconds (Eg: 75)</h3><input id="nineth" name="elapsed_time_sec" required="required">
+			<h3>Packets Sent (Eg: 15)</h3><input id="tenth" name="pkts_sent" required="required">
+			<h3>Packets Received (Eg: 16)</h3><input id="eleventh" name="pkts_received" required="required">
             <br>
         </div>
         <br><br><button id="sub" type="submit ">Allow Or Reject</button>
