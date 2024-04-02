@@ -25,7 +25,7 @@ def logout():
     # Forget any user_id 
     session.clear() 
     # Redirect user to login form 
-    return redirect("/") 
+    return render_template('login.html')
 
 
 # add database like login credentials, username and password
