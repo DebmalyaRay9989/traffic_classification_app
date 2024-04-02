@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,6 +38,13 @@
       box-shadow: 0 2px 5px #f5f5f5; 
       background: #f5f5f5; 
       }
+	  .container {
+		height: 60px;
+		border: 1px solid black;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  }
       .fas {
       margin: 25px 10px 0;
       font-size: 72px;
@@ -137,15 +145,17 @@
 			This data set was collected from the internet traffic records on a security firewall. <br>
 			There are 12 features in total. Action feature is used as a class. There are 4 classes in total. <br>
 			These are allow, action, drop and reset-both classes.<br>
-			</h3>
-			
+			</h3>	
+		 <div class="container">
+         <form action="/logout" method="post">
+	     <button id="sub" type="submit ">Logout</button>
+         </form>	
+	    </div>
         </div>		
       </form>
     </div> 
-        <form action="/logout" method="post">
-	     <button id="sub" type="submit ">Logout</button>
-         </form>	
   </body>
 </html>
 
 				
+
