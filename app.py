@@ -20,10 +20,7 @@ def Home():
 
 
 @app.route("/logout",methods=['POST', 'GET']) 
-def logout(): 
-    """Log user out""" 
-    # Forget any user_id 
-    session.clear() 
+def logout():  
     # Redirect user to login form 
     return render_template('login.html')
 
