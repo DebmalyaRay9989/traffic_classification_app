@@ -19,7 +19,7 @@ def Home():
     return render_template('login.html')
 
 
-@app.route("/logout") 
+@app.route("/logout",methods=['POST', 'GET']) 
 def logout(): 
     """Log user out""" 
     # Forget any user_id 
