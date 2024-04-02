@@ -1,6 +1,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -127,7 +129,7 @@
         <i class="fas fa-at"></i>
         <i class="fas fa-mail-bulk"></i>
       </div>
-      <form action="{{ url_for('predict')}}" method="post">
+      <form action="/logout" method="post">
         <h1><b><u> Internet Firewall Data - Classification </u></b></h1>
         <div class="info">
             <br>
@@ -148,17 +150,14 @@
 			There are 12 features in total. Action feature is used as a class. There are 4 classes in total. <br>
 			These are allow, action, drop and reset-both classes.<br>
 			<br>
+			<button id="sub" type="submit ">Logout</button>
 			</h3>	
         </div>		
       </form>
     </div> 
-	 <div class="container">
-         <form action="/logout" method="post">
-	     <button id="sub" type="submit ">Logout</button>
-         </form>	
-	 </div>
      </body>
 </html>
 
 
 
+				
