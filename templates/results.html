@@ -139,10 +139,10 @@
 			
         </div>		
       </form>
+	<form action="{{ url_for('/')}}" method="post">
+        <input type="submit" value="Logout"> 
+        </form> 
     </div>  
-    <form action="{{ url_for('logout')}}" method="post">
-       <input type="submit" value="Logout"> 
-    </form> 
   </body>
 </html>
 
