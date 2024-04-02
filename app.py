@@ -18,8 +18,17 @@ def after_request(response):
 def Home():
     return render_template('login.html')
 
-# add database like login credentials, username and password
 
+@app.route("/logout") 
+def logout(): 
+    """Log user out""" 
+    # Forget any user_id 
+    session.clear() 
+    # Redirect user to login form 
+    return redirect("/") 
+
+
+# add database like login credentials, username and password
 
 			
 standard_to = StandardScaler()
