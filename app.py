@@ -7,7 +7,7 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-model = pickle.load(open('random4.pkl', 'rb'))
+model = pickle.load(open('internetdata.pkl', 'rb'))
 
 @app.after_request
 def after_request(response):
