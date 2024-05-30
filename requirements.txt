@@ -9,7 +9,6 @@ joblib==1.2.0
 jsonify==0.5
 MarkupSafe==1.1.1
 numpy>=1.11.0
-Pillow
 pandas
 pickleshare==0.7.5
 requests==2.24.0
